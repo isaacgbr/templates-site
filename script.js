@@ -119,46 +119,45 @@ document.body.appendChild(heart);
 
 }
 
-function formatarData(){
+function formatarData() {
 
-let campo=document.getElementById("resposta");
+    const campo = document.getElementById("resposta");
 
-let valor=campo.value.replace(/\D/g,'');
+    let valor = campo.value.replace(/\D/g, '');
 
-if(valor.length>2)
-valor=valor.slice(0,2)+"/"+valor.slice(2);
+    if (valor.length > 8) {
+        valor = valor.substring(0, 8);
+    }
 
-if(valor.length>5)
-valor=valor.slice(0,5)+"/"+valor.slice(5);
+    if (valor.length > 4) {
+        valor = valor.replace(/(\d{2})(\d{2})(\d+)/, '$1/$2/$3');
+    } else if (valor.length > 2) {
+        valor = valor.replace(/(\d{2})(\d+)/, '$1/$2');
+    }
 
-campo.value=valor;
-
+    campo.value = valor;
 }
 
-function validarCampo(){
+function validarCampo() {
 
-const campo=document.getElementById("resposta");
+    const campo = document.getElementById("resposta");
+    const botao = document.getElementById("btnCarta");
 
-const botao=document.getElementById("btnCarta");
+    if (campo.value.length === 10) {
 
-if(campo.value.length>0){
+        botao.disabled = false;
 
-botao.disabled=false;
+        botao.classList.remove("btnDesabilitado");
 
-botao.classList.remove("btnDesabilitado");
+        botao.classList.add("btnAtivo");
 
-botao.classList.add("btnAtivo");
+    } else {
 
-}else{
+        botao.disabled = true;
 
-botao.disabled=true;
+        botao.classList.remove("btnAtivo");
 
-botao.classList.remove("btnAtivo");
+        botao.classList.add("btnDesabilitado");
 
-botao.classList.add("btnDesabilitado");
-
-}
-
-}
-
+    }
 }
