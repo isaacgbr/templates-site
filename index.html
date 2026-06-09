@@ -21,9 +21,22 @@
 <h2>Antes de continuar, me responde...</h2>
 <p>Quando completaremos 1 ano de namoro?</p>
 
-<input type="text" id="resposta" placeholder="Digite a resposta">
+<input
+type="text"
+id="resposta"
+placeholder="Ex: 05/10/2026"
+maxlength="10"
+oninput="formatarData(); validarCampo();"
+>
 
-<button onclick="verificarSenha()">Abre a sua carta agora!</button>
+<button
+id="btnCarta"
+class="btnDesabilitado"
+onclick="verificarSenha()"
+disabled
+>
+Abrir sua carta ❤️
+</button>
 
 <p id="erro"></p>
 </div>
