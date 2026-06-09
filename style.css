@@ -1,48 +1,103 @@
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:#071427;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(to bottom,#020b1f,#071427,#102b5a);
 color:white;
 text-align:center;
+overflow-x:hidden;
+min-height:100vh;
 }
 
 .container{
-padding:30px;
+padding:40px 20px;
+position:relative;
+z-index:2;
 }
 
 h1{
-margin-top:30px;
+font-size:3rem;
+margin-top:40px;
+animation:fade 2s ease;
+}
+
+h2{
+font-weight:400;
 }
 
 #timer{
-font-size:2rem;
+font-size:3rem;
 font-weight:bold;
+margin-top:20px;
+text-shadow:0 0 10px rgba(255,255,255,.6);
 }
 
 input{
-padding:10px;
+padding:12px;
+width:250px;
 border:none;
-border-radius:8px;
-width:220px;
+border-radius:10px;
+font-size:16px;
 }
 
 button{
-padding:10px 20px;
-margin-top:10px;
+padding:12px 20px;
 border:none;
-border-radius:8px;
+border-radius:10px;
+margin-top:10px;
 cursor:pointer;
+font-size:16px;
 }
 
 .galeria{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:10px;
+gap:15px;
 margin-top:20px;
 }
 
 .galeria img{
-width:250px;
-border-radius:12px;
+width:220px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(255,255,255,.2);
+}
+
+.star{
+position:fixed;
+background:white;
+border-radius:50%;
+animation:piscar 3s infinite;
+}
+
+.heart{
+position:fixed;
+font-size:20px;
+animation:subir 10s linear infinite;
+opacity:.6;
+}
+
+@keyframes piscar{
+50%{
+opacity:.2;
+}
+}
+
+@keyframes subir{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-100px);
+}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
