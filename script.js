@@ -1,4 +1,4 @@
-const dataFinal = new Date("2026-06-09T13:20:00-03:00");
+const dataFinal = new Date("2026-06-09T10:00:00-03:00");
 
 const timer = document.getElementById("timer");
 
