@@ -1,103 +1,51 @@
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-background:linear-gradient(to bottom,#020b1f,#071427,#102b5a);
-color:white;
-text-align:center;
-overflow-x:hidden;
-min-height:100vh;
-}
-
-.container{
-padding:40px 20px;
-position:relative;
-z-index:2;
-}
-
-h1{
-font-size:3rem;
-margin-top:40px;
-animation:fade 2s ease;
-}
-
-h2{
-font-weight:400;
-}
-
-#timer{
-font-size:3rem;
-font-weight:bold;
+#btnCarta{
 margin-top:20px;
-text-shadow:0 0 10px rgba(255,255,255,.6);
-}
-
-input{
-padding:12px;
-width:250px;
+padding:14px 25px;
+font-size:18px;
 border:none;
-border-radius:10px;
-font-size:16px;
+border-radius:12px;
+transition:all .3s ease;
 }
 
-button{
-padding:12px 20px;
-border:none;
-border-radius:10px;
-margin-top:10px;
-cursor:pointer;
-font-size:16px;
+.btnDesabilitado{
+opacity:.4;
+cursor:not-allowed;
 }
 
-.galeria{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-margin-top:20px;
-}
-
-.galeria img{
-width:220px;
-border-radius:15px;
-box-shadow:0 0 15px rgba(255,255,255,.2);
-}
-
-.star{
-position:fixed;
-background:white;
-border-radius:50%;
-animation:piscar 3s infinite;
-}
-
-.heart{
-position:fixed;
-font-size:20px;
-animation:subir 10s linear infinite;
-opacity:.6;
-}
-
-@keyframes piscar{
-50%{
-opacity:.2;
-}
-}
-
-@keyframes subir{
-from{
-transform:translateY(100vh);
-}
-to{
-transform:translateY(-100px);
-}
-}
-
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
+.btnAtivo{
 opacity:1;
-transform:translateY(0);
+background:white;
+color:#071427;
+cursor:pointer;
 }
+
+.btnAtivo:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px rgba(255,255,255,.5);
+}
+
+.btnSucesso{
+background:#1db954;
+color:white;
+}
+
+.btnErro{
+background:#ff4d4d;
+color:white;
+animation:tremer .4s;
+}
+
+#erro{
+margin-top:15px;
+font-size:18px;
+font-weight:bold;
+color:#ff8080;
+}
+
+@keyframes tremer{
+0%{transform:translateX(0);}
+25%{transform:translateX(-8px);}
+50%{transform:translateX(8px);}
+75%{transform:translateX(-8px);}
+100%{transform:translateX(0);}
 }
