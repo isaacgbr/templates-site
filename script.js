@@ -4,11 +4,13 @@ const timer = document.getElementById("timer");
 
 function atualizar(){
 
-const agora = new Date();
+document.getElementById("countdown").style.display="none";
 
-const diferenca = dataFinal - agora;
+document.getElementById("senha").style.display="block";
 
-if(true){
+clearInterval(intervalo);
+
+}
 
 document.getElementById("countdown").style.display="none";
 document.getElementById("senha").style.display="block";
