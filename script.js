@@ -1,4 +1,5 @@
 const dataFinal = new Date("2026-06-09T21:00:00-03:00");
+const timer = document.getElementById("timer");
 
 function atualizar(){
 
