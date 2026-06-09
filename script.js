@@ -8,7 +8,7 @@ const agora = new Date();
 
 const diferenca = dataFinal - agora;
 
-if(diferenca <= 0){
+if(true){
 
 document.getElementById("countdown").style.display="none";
 document.getElementById("senha").style.display="block";
