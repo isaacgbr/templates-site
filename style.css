@@ -33,10 +33,12 @@ h2{
 /* TIMER */
 
 #timer{
-    font-size:4rem;
+    font-size:3rem;
     font-weight:bold;
     margin-top:30px;
     text-shadow:0 0 15px rgba(255,255,255,.4);
+
+    white-space:nowrap;
 }
 
 /* CARTA */
@@ -502,7 +504,13 @@ input{
 
 .spotify-card p{
 
-    opacity:.85;
+    font-size:1.2rem;
+
+    font-weight:500;
+
+    opacity:.95;
+
+    margin-top:15px;
 }
 
 .album-cover:hover{
