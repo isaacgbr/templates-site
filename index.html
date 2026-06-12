@@ -3,73 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bem-vinda, meu amor ❤️</title>
+<title>Bem vinda, meu amor!</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
-    <h1>Está curiosa? Seu namoradinho preparou algo para você! ❤️</h1>
+    <!-- TELA 1 -->
+    <section id="countdownPage">
 
-    <!-- CONTAGEM -->
-    <div id="countdown">
-        <h2>Quando essa contagem se esgotar, você verá uma surpresa por aqui!</h2>
-        <p id="timer"></p>
-    </div>
+    <div class="spotify-card">
 
-    <!-- PERGUNTA -->
-    <div id="senha" style="display:none;">
-        <h2>Antes de continuar, me responde...</h2>
+        <img
+        src="img/innerbloom.jpg"
+        class="album-cover"
+        alt="Innerbloom">
 
-        <p>Quando completaremos 1 ano de namoro?</p>
+        <h3>INNERBLOOM</h3>
 
-        <input
-            type="text"
-            id="resposta"
-            placeholder="Digita aqui..."
-            maxlength="10"
-            oninput="formatarData(); validarCampo();"
-        >
+        <p>RÜFÜS DU SOL</p>
 
         <button
-            id="btnCarta"
-            class="btnDesabilitado"
-            onclick="verificarSenha()"
-            disabled
-        >
-            Abrir sua carta ❤️
+        id="btnInnerbloom"
+        onclick="toggleInnerbloom()">
+
+        🎵 Tocar Música
+
         </button>
 
-        <p id="erro"></p>
-    </div>
+        <h2 id="timer">00:00:00</h2>
 
-    <!-- SURPRESA -->
-    <div id="surpresa" style="display:none;">
-
-        <h1>🎂 Feliz Aniversário, Meu Amor!! ❤️</h1>
-
-        <p id="carta">
-            Meu amor,
-
-            Hoje é um dia muito especial porque o mundo ganhou a pessoa que transformou meus dias em algo muito melhor.
-
-            Eu te amo muito!!
-
-            (Acha que é só isso? Eu ainda vou escrever uma mensagem maior para você...)
+        <p>
+        Uma surpresa está chegando...
+        Enquanto o timer não acabar, aproveita pra escutar essa música que eu sei que você ama! 
         </p>
 
-        <h3>Eu e você 📸</h3>
-
-        <div class="galeria">
-            <img src="https://via.placeholder.com/250" alt="Foto 1">
-            <img src="https://via.placeholder.com/250" alt="Foto 2">
-            <img src="https://via.placeholder.com/250" alt="Foto 3">
-        </div>
-
     </div>
 
+</section>
+
+    <!-- TELA 2 -->
+    <section id="erroPage" style="display:none;">
+
+        <h1>⚠️ Error 404</h1>
+
+<p>
+Ocorreu um erro ao carregar esta página.
+</p>
+
+<p style="opacity:.7;font-size:14px;">
+SURPRESA_NOT_FOUND
+</p>
+
+        <button onclick="abrirCarta()">
+🔄 Recarregar Surpresa
+</button>
+
+    </section>
+
+    <!-- TELA 3 -->
+    <section id="cartaPage" style="display:none;">
+
+        <h1>
+        Feliz Dia dos Namorados, Meu Amor ❤️
+        </h1>
+
+        <div id="carta">
+
+            <p>
+                Você achou mesmo que eu deixaria de falar algo para você referente ao seu aniversário? Claro que não! Eu preparei essa surpresa para você, e espero que você goste! Cada dia ao seu lado me faz entender o quanto eu sou sortudo por ter você na minha vida. Você foi a melhor coisa que já me aconteceu nesses ultimos tempos e eu sou muito grato por tudo que já vivemos juntos e vamos continuar vivendo cada dia que passa. Eu te amo muito, e espero que esse seja um dos muitos aniversários que vamos comemorar juntos!
+
+            </p>
+
+            <p>
+                E claro, hoje é dia 12/06/2026, o Dia dos Namorados, e não iria deixar passar despercebido de modo algum, né? Então, feliz Dia dos namorados, meu amor! Que seja um dia tão especial quanto você é para mim! Essa surpresa foi em dobro, porque eu queria que fosse algo que fizesse você sorrir, se sentir feliz, animada, e claro, que fosse algo que você se surpreenderia, e eu espero que tenha conseguido isso, minha princesa!
+            </p>
+
+            <p>
+                Até coloquei nossas fotos para relembrar alguns momentos que já vivemos juntos, e para mostrar o quanto eu amo cada um desses momentos, e principalemnte o quanto eu amo você!
+
+                Agora, para a última parte da surpresa, tenho um desafio para você, e se você conseguir completar, tem mais uma surpresa esperando por você no final hein, olha logo abaixo que você vai ver! ❤️
+            </p>
+
+        </div>
+
+        <div class="galeria">
+
+            <img src="img/foto1.jpeg">
+            <img src="img/foto2.jpeg">
+            <img src="img/foto3.jpeg">
+            <img src="img/foto4.jpeg">
+            <img src="img/foto5.jpeg">
+            <img src="img/foto6.jpeg">
+            <img src="img/foto7.jpeg">
+            <img src="img/foto8.jpeg">
+
+            
+
+        </div>
+
+        <button onclick="abrirQuiz()">
+            Achou mesmo que era só isso...? 🤔
+        </button>
+
+    </section>
+
+    <!-- TELA 4 -->
+    <section id="quizPage" style="display:none;">
+
+        <h1>Vamos começar o desafio, amor?</h1>
+
+        <div class="barra">
+    <div class="progresso" id="progresso"></div>
 </div>
+
+<h2 id="pergunta"></h2>
+
+<div id="alternativas"></div>
+
+<p id="erroQuiz"></p>
+
+    </section>
+
+    <!-- TELA 5 -->
+    <section id="finalPage" style="display:none;">
+
+        <h1>🎁 Parabéns, amor, você completou o desafio!</h1>
+
+        <p>
+            Sua surpresa está esperando por você...
+        </p>
+
+        <h2>
+            Procura dentro do guarda-roupa ❤️
+        </h2>
+
+    </section>
+
+</div>
+
+<audio
+id="innerbloom"
+controls
+style="display:none;width:100%;margin-top:15px;">
+
+    <source
+    src="innerbloom.mp3"
+    type="audio/mpeg">
+
+</audio>
+
+<audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
 
 <script src="script.js"></script>
 
